@@ -8,10 +8,9 @@
 
 .background1{
     background-image: url('../img/Fondo1.jpg');
-    background-position: center center;
-    background-size: auto;
-    background-repeat: no-repeat;
-    width: 1600px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
     height: 765px;
     padding: 0%;
     margin: 0%;
@@ -99,4 +98,13 @@
 
 .page2{
     display: flex;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dim{
+    height: 70px;
+    width: 100px;
+    align-items: center;
 }

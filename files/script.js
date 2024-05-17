@@ -1,6 +1,17 @@
 let pokemones = [];
 let elementos = 0;
 
+const vaciar = document.getElementById('vaciar');
+
+function vaciarArray() {
+    document.getElementById('pokemon-container').innerHTML = '';
+    pokemones = [];
+    elementos = 0;
+    buscar.disabled = false;
+}
+
+vaciar.addEventListener('click', vaciarArray);
+
 document.getElementById('buscar').addEventListener('click', function(){
 
     elementos = elementos+1;
@@ -28,14 +39,22 @@ document.getElementById('historial').addEventListener('click', function(){
             element1.innerHTML += `
             <div>
                 <div>
-                    <strong>Name:</strong> ${pokemon1.name}
-                    <strong>Type:</strong> ${pokemon1.types[0].type.name}
-                    <img src=${pokemon1.sprites.front_default}>
+                    <strong>Name: </strong>${pokemon1.name}
+                    <br>
+                    <br>
+                    <strong>Type: </strong>${pokemon1.types[0].type.name}
+                    <br>
+                    <br>
+                    <strong>Attack: </strong>${pokemon1.moves[1].move.name}
+                    <br>
+                    <br>
+                    <img src=${pokemon1.sprites.other.showdown.front_default}>
                 <div>
             <div>
             `;
             container1.appendChild(element1);
-        });
+    });
+    document.getElementById("historial").disabled = true;
 });
 
 async function displayPokemon(pokemonName){
@@ -58,7 +77,6 @@ document.getElementById('equipo').addEventListener('click', function(){
             <div>
                 <strong>Name:</strong> ${pokemon.name}
                 <img src=${pokemon.sprites.front_default}>
-                <strong>Type:</strong> ${pokemon.types[0].type.name}
             <div>
         <div>
         `;
@@ -76,8 +94,3 @@ async function displayPokemon(pokemonName){
     pokemones.push(pokemon);
     console.log(pokemon);
 }
-
-document.getElementById('delete').addEventListener('click', function() {
-    document.getElementById('pokemon-container').innerHTML = '';
-    elementos.innerHTML == 0;
-});
