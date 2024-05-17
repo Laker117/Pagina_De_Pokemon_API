@@ -8,6 +8,9 @@ function vaciarArray() {
     pokemones = [];
     elementos = 0;
     buscar.disabled = false;
+    equipo.disabled = true;
+    historial.disabled = true;
+    vaciar.disabled = true;
 }
 
 vaciar.addEventListener('click', vaciarArray);
@@ -28,6 +31,9 @@ document.getElementById('buscar').addEventListener('click', function(){
     }
     if(elementos > 0){
         document.getElementById("equipo").disabled = false;
+    }
+    if(elementos > 0){
+        document.getElementById("vaciar").disabled = false;
     }
 });
 
